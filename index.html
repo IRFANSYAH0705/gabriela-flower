@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Untuk Gabriela ❤️</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +21,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             background:
-                radial-gradient(circle at 50% 20%, #5d1739 0%, #210714 35%, #090206 80%);
+                radial-gradient(circle at 50% 15%, #641b40, #220914 40%, #080206 85%);
             color: white;
             font-family: Georgia, serif;
             text-align: center;
@@ -36,12 +34,10 @@
             padding: 35px 18px 80px;
         }
 
-        /* =========================
-           JUDUL
-        ========================= */
+        /* JUDUL */
 
-        .small-heart {
-            color: #ff9bc2;
+        .top-heart {
+            color: #ff9fc4;
             font-size: 25px;
             margin-bottom: 15px;
         }
@@ -49,125 +45,110 @@
         h1 {
             font-size: clamp(38px, 10vw, 85px);
             letter-spacing: 5px;
-            color: #ffb9d5;
+            color: #ffb8d5;
+
             text-shadow:
                 0 0 10px #ff4081,
                 0 0 30px #ff4081,
                 0 0 60px #ff4081;
 
-            animation: titleGlow 2.5s ease-in-out infinite alternate;
+            animation: glow 2.5s infinite alternate;
         }
 
         .subtitle {
-            margin: 15px auto 25px;
             max-width: 600px;
-            color: #ffdce9;
+            margin: 15px auto 25px;
+
+            color: #ffdeeb;
             font-size: clamp(15px, 2.5vw, 20px);
             line-height: 1.7;
         }
 
-        /* =========================
-           MUSIK
-        ========================= */
+        /* MUSIK */
 
         .music-box {
-            width: min(100%, 360px);
+            width: min(100%, 370px);
             margin: 25px auto;
             padding: 18px;
-            border-radius: 20px;
 
             background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,140,180,0.5);
+            border: 1px solid rgba(255,128,171,0.45);
+            border-radius: 20px;
 
             box-shadow:
                 0 0 25px rgba(255,64,129,0.15);
         }
 
         .music-title {
-            color: #ffc3d9;
+            color: #ffc4d9;
             margin-bottom: 12px;
-            font-size: 16px;
         }
 
         audio {
             width: 100%;
         }
 
-        /* =========================
-           AREA BUNGA
-        ========================= */
+        /* AREA BUNGA */
 
         .flower-area {
             position: relative;
-
             width: min(350px, 95vw);
             height: 440px;
-
             margin: 25px auto;
-
-            overflow: hidden;
         }
 
-        /* cahaya di belakang bunga */
+        /* CAHAYA */
 
         .light {
             position: absolute;
-
-            width: 280px;
-            height: 280px;
+            width: 300px;
+            height: 300px;
 
             left: 50%;
-            top: 30px;
+            top: 25px;
 
             transform: translateX(-50%);
 
             border-radius: 50%;
 
-            background: radial-gradient(
-                circle,
-                rgba(255,110,160,0.28),
-                transparent 70%
-            );
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,100,160,0.3),
+                    transparent 70%
+                );
 
             filter: blur(10px);
 
             animation: lightPulse 4s infinite alternate;
         }
 
-        /* =========================
-           TANAH
-        ========================= */
+        /* TANAH */
 
         .soil {
             position: absolute;
 
-            bottom: 5px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
             width: 330px;
+            max-width: 95%;
             height: 65px;
 
-            max-width: 95%;
+            left: 50%;
+            bottom: 5px;
+
+            transform: translateX(-50%);
 
             border-radius: 50%;
 
             background:
                 radial-gradient(
                     ellipse,
-                    #633c30,
-                    #351b1d 55%,
-                    #170a0d
+                    #704436,
+                    #351b1b 55%,
+                    #16090d
                 );
-
-            box-shadow:
-                0 -5px 20px rgba(255,100,150,0.08);
         }
 
-        /* =========================
-           BUNGA
-        ========================= */
+        /* BUNGA */
 
         .flower {
             position: absolute;
@@ -185,13 +166,11 @@
             opacity: 0;
 
             animation:
-                flowerAppear 2s ease-out 0.3s forwards,
-                wind 5s ease-in-out 11s infinite;
+                appear 2s ease-out 0.2s forwards,
+                wind 5s ease-in-out 12s infinite;
         }
 
-        /* =========================
-           BATANG
-        ========================= */
+        /* BATANG */
 
         .stem {
             position: absolute;
@@ -202,7 +181,9 @@
             left: 50%;
             bottom: 0;
 
-            transform: translateX(-50%) scaleY(0);
+            transform:
+                translateX(-50%)
+                scaleY(0);
 
             transform-origin: bottom;
 
@@ -212,17 +193,15 @@
                 linear-gradient(
                     to right,
                     #123b20,
-                    #55a95b,
+                    #60b564,
                     #246331
                 );
 
             animation:
-                stemGrow 4s ease-out 0.8s forwards;
+                growStem 4s ease-out 0.8s forwards;
         }
 
-        /* =========================
-           DAUN
-        ========================= */
+        /* DAUN */
 
         .leaf {
             position: absolute;
@@ -240,9 +219,6 @@
                 );
 
             opacity: 0;
-
-            box-shadow:
-                inset 0 0 8px rgba(255,255,255,0.2);
         }
 
         .leaf.left {
@@ -265,9 +241,7 @@
                 leafRight 2s ease-out 5s forwards;
         }
 
-        /* =========================
-           KUNCUP
-        ========================= */
+        /* KUNCUP */
 
         .bud {
             position: absolute;
@@ -284,8 +258,7 @@
 
             transform-origin: bottom;
 
-            border-radius:
-                50% 50% 45% 45%;
+            border-radius: 50% 50% 45% 45%;
 
             background:
                 linear-gradient(
@@ -302,9 +275,7 @@
                 budGrow 3s ease-out 5.8s forwards;
         }
 
-        /* =========================
-           BUNGA MEKAR
-        ========================= */
+        /* BUNGA MEKAR */
 
         .bloom {
             position: absolute;
@@ -325,7 +296,7 @@
                 bloomStart 1s ease-out 8s forwards;
         }
 
-        /* kelopak */
+        /* KELOPAK */
 
         .petal {
             position: absolute;
@@ -336,8 +307,7 @@
             left: 69px;
             top: 45px;
 
-            border-radius:
-                50% 50% 45% 45%;
+            border-radius: 50% 50% 45% 45%;
 
             transform-origin: 50% 90%;
 
@@ -350,13 +320,10 @@
                 );
 
             box-shadow:
-                inset 0 0 15px rgba(255,255,255,0.25),
-                0 0 10px rgba(255,70,130,0.15);
+                inset 0 0 15px rgba(255,255,255,0.25);
 
             opacity: 0;
         }
-
-        /* setiap kelopak membuka sendiri */
 
         .petal:nth-child(1) {
             --angle: 0deg;
@@ -388,7 +355,7 @@
             animation: petalOpen 3s ease-out 9.7s forwards;
         }
 
-        /* tengah bunga */
+        /* TENGAH BUNGA */
 
         .flower-center {
             position: absolute;
@@ -433,13 +400,10 @@
             transform: translate(-50%, -50%);
 
             color: #fff4c4;
-
             font-size: 24px;
         }
 
-        /* =========================
-           PESAN SWEET
-        ========================= */
+        /* PESAN */
 
         .message {
             width: 100%;
@@ -447,13 +411,11 @@
 
             margin: 25px auto;
 
-            padding:
-                clamp(20px, 5vw, 35px);
+            padding: clamp(20px, 5vw, 35px);
 
             border-radius: 22px;
 
-            background:
-                rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.04);
 
             border:
                 1px solid rgba(255,128,171,0.25);
@@ -461,9 +423,9 @@
             box-shadow:
                 0 0 30px rgba(255,64,129,0.08);
 
-            line-height: 1.9;
-
             color: #ffe5ef;
+
+            line-height: 1.9;
         }
 
         .message h2 {
@@ -480,7 +442,6 @@
 
         .sweet {
             opacity: 0;
-
             transform: translateY(25px);
 
             animation:
@@ -511,32 +472,26 @@
             animation-delay: 32s;
         }
 
-        /* =========================
-           KEPLOK JATUH
-        ========================= */
+        /* KELOPAK JATUH */
 
         .falling-petal {
             position: fixed;
 
             top: -30px;
 
-            z-index: 20;
+            z-index: 50;
 
             pointer-events: none;
 
             color: #ff86b1;
 
-            font-size: 20px;
-
             animation:
                 fall linear forwards;
         }
 
-        /* =========================
-           ANIMASI
-        ========================= */
+        /* ANIMASI */
 
-        @keyframes flowerAppear {
+        @keyframes appear {
             from {
                 opacity: 0;
             }
@@ -546,7 +501,7 @@
             }
         }
 
-        @keyframes stemGrow {
+        @keyframes growStem {
             from {
                 transform:
                     translateX(-50%)
@@ -693,7 +648,7 @@
             }
         }
 
-        @keyframes titleGlow {
+        @keyframes glow {
             from {
                 text-shadow:
                     0 0 10px #ff4081;
@@ -711,21 +666,17 @@
                 transform:
                     translateX(-50%)
                     scale(0.9);
-
-                opacity: 0.5;
             }
 
             to {
                 transform:
                     translateX(-50%)
                     scale(1.15);
-
-                opacity: 1;
             }
         }
 
         @keyframes fall {
-            0% {
+            from {
                 transform:
                     translateY(0)
                     rotate(0deg);
@@ -733,7 +684,7 @@
                 opacity: 0.9;
             }
 
-            100% {
+            to {
                 transform:
                     translateY(110vh)
                     rotate(360deg);
@@ -742,9 +693,7 @@
             }
         }
 
-        /* =========================
-           HP
-        ========================= */
+        /* HP */
 
         @media (max-width: 480px) {
 
@@ -769,22 +718,14 @@
 
             .message {
                 padding: 20px 17px;
-
                 font-size: 15px;
-
                 line-height: 1.8;
             }
 
             .message h2 {
                 font-size: 25px;
             }
-
-            .music-box {
-                padding: 15px;
-            }
         }
-
-        /* HP SANGAT KECIL */
 
         @media (max-width: 350px) {
 
@@ -795,7 +736,6 @@
 
             .flower-area {
                 transform: scale(0.9);
-
                 margin-top: -10px;
                 margin-bottom: -20px;
             }
@@ -813,7 +753,7 @@
 
     <div class="container">
 
-        <div class="small-heart">
+        <div class="top-heart">
             ♡ ─── ♥ ─── ♡
         </div>
 
@@ -824,14 +764,12 @@
 
 
         <p class="subtitle">
-            Untuk seseorang yang membuat hari-hari
-            terasa lebih indah. ♡
+            Untuk seseorang yang membuat
+            hari-hari terasa lebih indah. ♡
         </p>
 
 
-        <!-- =====================
-             MUSIK
-        ====================== -->
+        <!-- MUSIK -->
 
         <div class="music-box">
 
@@ -845,8 +783,9 @@
                 loop
                 controls>
 
+                <!-- SUDAH DISESUAIKAN -->
                 <source
-                    src="seandainya.mp3"
+                    src="seandainya.mpeg"
                     type="audio/mpeg">
 
                 Browser kamu tidak mendukung audio.
@@ -856,9 +795,7 @@
         </div>
 
 
-        <!-- =====================
-             BUNGA
-        ====================== -->
+        <!-- BUNGA -->
 
         <div class="flower-area">
 
@@ -871,11 +808,9 @@
 
                 <div class="stem"></div>
 
-
                 <div class="leaf left"></div>
 
                 <div class="leaf right"></div>
-
 
                 <div class="bud"></div>
 
@@ -883,17 +818,11 @@
                 <div class="bloom">
 
                     <div class="petal"></div>
-
                     <div class="petal"></div>
-
                     <div class="petal"></div>
-
                     <div class="petal"></div>
-
                     <div class="petal"></div>
-
                     <div class="petal"></div>
-
 
                     <div class="flower-center"></div>
 
@@ -904,14 +833,12 @@
         </div>
 
 
-        <div class="small-heart">
+        <div class="top-heart">
             🌹 💗 🌹
         </div>
 
 
-        <!-- =====================
-             KATA-KATA SWEET
-        ====================== -->
+        <!-- KATA-KATA -->
 
         <div class="message">
 
@@ -971,7 +898,7 @@
         </div>
 
 
-        <div class="small-heart">
+        <div class="top-heart">
             ♡
         </div>
 
@@ -981,10 +908,8 @@
             font-size:18px;
             line-height:1.8;
         ">
-
             Dari seseorang yang
             selalu ingin melihatmu tersenyum. ❤️
-
         </p>
 
     </div>
@@ -992,20 +917,23 @@
 
     <script>
 
-        /* =========================
-           MUSIK
-        ========================= */
+        /*
+         * MUSIK
+         *
+         * File GitHub:
+         * seandainya.mpeg
+         */
 
         const musik =
             document.getElementById("musik");
 
 
         /*
-         * Musik mencoba mulai ketika
-         * bagian pesan sweet dimulai.
+         * Mencoba menjalankan musik
+         * ketika halaman sudah berjalan.
          *
-         * Browser dapat memblokir
-         * autoplay dengan suara.
+         * Browser bisa memblokir autoplay
+         * dengan suara.
          */
 
         setTimeout(function () {
@@ -1015,7 +943,7 @@
             musik.play().catch(function () {
 
                 console.log(
-                    "Autoplay diblokir browser."
+                    "Autoplay diblokir oleh browser."
                 );
 
             });
@@ -1042,12 +970,12 @@
                 Math.random() * 100 + "vw";
 
 
-            kelopak.style.animationDuration =
-                (4 + Math.random() * 5) + "s";
-
-
             kelopak.style.fontSize =
                 (14 + Math.random() * 14) + "px";
+
+
+            kelopak.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
 
 
             document.body.appendChild(
@@ -1060,7 +988,6 @@
                 kelopak.remove();
 
             }, 10000);
-
         }
 
 
